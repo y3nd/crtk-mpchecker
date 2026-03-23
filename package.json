@@ -1,0 +1,30 @@
+{
+  "name": "crtk-mpchecker",
+  "version": "1.0.0",
+  "description": "Mountpoint name availability checker lib, cli & server for Centipede-RTK network",
+  "keywords": [
+    "rtk",
+    "checker",
+    "mountpoint",
+    "ntrip",
+    "centipede-rtk"
+  ],
+  "homepage": "https://gitlab.com/y3n/crtk-mpchecker#readme",
+  "bugs": {
+    "url": "https://gitlab.com/y3n/crtk-mpchecker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/y3n/crtk-mpchecker.git"
+  },
+  "license": "ISC",
+  "author": "y3n",
+  "type": "commonjs",
+  "main": "crtk-mpchecker-cli.js",
+  "scripts": {
+    "test": "node crtk-mpchecker-cli.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}

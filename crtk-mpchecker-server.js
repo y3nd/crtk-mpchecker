@@ -1,6 +1,9 @@
 const http = require("node:http");
 const net = require("node:net");
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 const { createMountpointChecker } = require("./mpchecker-core");
 
 const DEBUG = process.env.DEBUG === "1" || process.argv.includes("--debug") || process.argv.includes("-d");
