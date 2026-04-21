@@ -15,9 +15,7 @@ The check combines three sources:
 
 ## Requirements
 
-- Node.js 18+ recommended
-
-This project uses the built-in `fetch` API and `performance`.
+- Node.js 24+ recommended
 
 ## Files
 
@@ -27,7 +25,12 @@ This project uses the built-in `fetch` API and `performance`.
 
 ## CLI usage
 
-Run:
+### Install
+```bash
+npm install
+```
+
+### Run
 
 ```bash
 node crtk-mpchecker-cli.js <mountpoint>
@@ -71,7 +74,7 @@ By default the server listens on:
 http://[::]:8010
 ```
 
-Check a mountpoint with:
+Check a mountpoint with HTTP:
 
 ```text
 GET /<MOUNTPOINT>
@@ -85,6 +88,27 @@ GET /NOTEXISTING  -> AVAILABLE
 ```
 
 If the path is empty or invalid, the server returns a short help text.
+
+### CURL examples
+
+#### Available
+```bash
+curl http://localhost:8010/TESTMP
+```
+Expected response:
+
+```text
+AVAILABLE
+```
+
+#### Taken
+```bash
+curl http://localhost:8010/EXISTING
+```
+Expected response:
+```text
+TAKEN
+```
 
 ### HTTP behavior
 
@@ -162,3 +186,4 @@ AVAILABLE
 - The mountpoint lists are cached in memory for the configured TTL.
 - The server groups IPv6 clients by `/64` subnet for rate limiting.
 - There is currently no `package.json`; the scripts can be run directly with Node.js.
+- PM2 or similar tools can be used to run the server in production.
